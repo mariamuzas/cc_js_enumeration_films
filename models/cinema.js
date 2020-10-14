@@ -8,17 +8,21 @@ Cinema.prototype.filmTitles = function () {
   });
 };
 
+// Cinema.prototype.filmTitles = function () {
+//   return this.films.map(film => film.title);
+// };
+
 Cinema.prototype.filmByTitle = function (filmtitle) {
   return this.films.find((film) => {
     return film.title === filmtitle;
     });
 };
 
-Cinema.prototype.filmsByGenre = function (genre) {
-  return this.films.filter((film) => {
-    return genre === film.genre;
-  });
-};
+// Cinema.prototype.filmsByGenre = function (genre) {
+//   return this.films.filter((film) => {
+//     return genre === film.genre;
+//   });
+// };
 
 Cinema.prototype.checkFilmsInYear = function (year) {
   return this.films.some((film) => {
@@ -38,4 +42,9 @@ Cinema.prototype.totalRunningTime = function() {
   }, 0);
 }
 
+Cinema.prototype.filmsByProperty = function (key, value) {
+  return this.films.filter((film) => {
+    return value === film[key];
+  });
+};
 module.exports = Cinema;
